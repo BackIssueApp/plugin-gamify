@@ -1,0 +1,113 @@
+{
+  "menu": {
+    "label": "Zadania"
+  },
+  "settings": {
+    "intro": "Czytanie jako przygoda — XP, serie dni, osiągnięcia i cotygodniowa tablica zadań zbudowana z twojej biblioteki.",
+    "household": "Funkcje domowe (miesięczne zadanie kooperacyjne + ranking)",
+    "notify": "Powiadomienia o zadaniach, osiągnięciach i awansach",
+    "celebration": "Animacja świętowania awansu",
+    "questCount": "Zadania tygodniowe",
+    "note": "Poszczególni użytkownicy mogą dodatkowo ukryć się w rankingu domowym i zadaniu kooperacyjnym na tablicy zadań. Przy wyłączonych powiadomieniach postęp nadal się liczy — po prostu nic nie jest ogłaszane.",
+    "dailyIssueCap": "Zeszyty dziennie, które się liczą",
+    "dailyPageCap": "Strony dziennie, które się liczą",
+    "streakMinPages": "Min. stron na dzień serii",
+    "fairPlay": "<b>Uczciwa gra</b>: tylko czytanie w czytniku daje XP, zadania i serie dni — „oznacz jako przeczytane” aktualizuje bibliotekę, ale nie daje punktów. Te limity ograniczają, ile można zdobyć jednego dnia (XP, zadania, ranking), oraz określają, przy jak małej liczbie stron dzień nadal liczy się do serii."
+  },
+  "board": {
+    "title": "Zadania",
+    "tabQuests": "Zadania",
+    "tabBadges": "Osiągnięcia",
+    "tabHouse": "Dom",
+    "close": "Zamknij",
+    "loading": "Wczytywanie…",
+    "loadFailed": "Nie udało się wczytać twojego postępu.",
+    "notReady": "Jeszcze niegotowe."
+  },
+  "hero": {
+    "level": "Poziom",
+    "xpToNext": "{xp} XP · {n} do następnego",
+    "dayStreak": "Seria: <b>{count}</b> dni",
+    "best": "Rekord: <b>{count}</b>",
+    "freezeTitle": "Zużywane automatycznie, gdy opuścisz dzień",
+    "freezes": {
+      "one": "<b>{count}</b> zamrożenie",
+      "few": "<b>{count}</b> zamrożenia",
+      "many": "<b>{count}</b> zamrożeń",
+      "other": "<b>{count}</b> zamrożenia"
+    },
+    "goal": "Cel czytelniczy na {year}",
+    "change": "zmień",
+    "setGoal": "Ustaw cel czytelniczy na {year}",
+    "goalPrompt": "Zeszyty do przeczytania w {year} (0 usuwa cel):"
+  },
+  "quests": {
+    "weekly": "Zadania tygodniowe",
+    "rerollsLeft": {
+      "one": "Zostało {count} losowanie",
+      "few": "Zostały {count} losowania",
+      "many": "Zostało {count} losowań",
+      "other": "Zostało {count} losowania"
+    },
+    "xp": "+{xp} XP",
+    "complete": "Ukończone",
+    "reroll": "losuj ponownie",
+    "none": "Brak zadań — przeczytaj coś i wróć później, albo w twojej bibliotece nie zostało już nic nieprzeczytanego!",
+    "coop": "Kooperacja domowa",
+    "together": "Razem {done} / {total} zeszytów"
+  },
+  "badges": {
+    "title": "Osiągnięcia",
+    "unlocked": "Odblokowane"
+  },
+  "house": {
+    "title": "Ranking w tym miesiącu",
+    "issuesShort": "{count} zesz.",
+    "levelShort": "poz. {level}",
+    "issuesPages": "{issues} zesz. · {pages} str.",
+    "empty": "W tym miesiącu nikogo jeszcze nie ma w rankingu.",
+    "optOut": "Ukryj mnie w rankingu domowym i zadaniu kooperacyjnym"
+  },
+  "party": {
+    "kicker": "Awans",
+    "xpTotal": "Łącznie {xp} XP",
+    "newTitle": "Nowy tytuł: {title}",
+    "newTitleSub": "Widoczny w twoim profilu i w rankingu",
+    "freeze": "Uzupełniono zamrożenie serii",
+    "freezeSub": "Zgromadzone: {count} — chroni dzień, który opuścisz",
+    "nice": "Super",
+    "view": "Pokaż zadania"
+  },
+  "profile": {
+    "summary": "{xp} XP · seria {count} dni"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "Czytanie jako przygoda: XP i poziomy, serie dni z żetonami zamrożenia, osiągnięcia, cotygodniowa tablica zadań zbudowana z twojej biblioteki i domowe rankingi"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "Odblokowano osiągnięcie: {name}",
+        "body": "{desc} (+{xp} XP)"
+      },
+      "gamifyToken": {
+        "title": "Nagroda za serię: zdobyto żeton zamrożenia",
+        "body": "Seria {days} dni czytania — żeton zamrożenia ochroni opuszczony dzień."
+      },
+      "gamifyLevel": {
+        "title": "Poziom {level} — {tier}!",
+        "body": "Awansowałeś. Uzupełniono zamrożenie serii — zgromadzone: {tokens}."
+      },
+      "gamifyQuest": {
+        "title": "Ukończono zadanie: {title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "Ukończono zadanie domowe!",
+        "body": "{title}"
+      }
+    }
+  }
+}

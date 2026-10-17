@@ -1,0 +1,107 @@
+{
+  "menu": {
+    "label": "クエスト"
+  },
+  "settings": {
+    "intro": "読書をクエストに。XP、連続記録、実績、ライブラリから作る週替わりのクエストボード。",
+    "household": "家族向け機能（月ごとの協力クエスト＋ランキング）",
+    "notify": "クエスト、実績、レベルアップの通知",
+    "celebration": "レベルアップ時のお祝い表示",
+    "questCount": "週間クエスト数",
+    "note": "各ユーザーはクエストボードで、家族のランキングや協力クエストから自分を非表示にすることもできます。通知をオフにしても進捗はカウントされ、通知されないだけです。",
+    "dailyIssueCap": "1 日にカウントする号数",
+    "dailyPageCap": "1 日にカウントするページ数",
+    "streakMinPages": "連続記録に必要な最小ページ数",
+    "fairPlay": "<b>フェアプレイ</b>：XP、クエスト、連続記録の対象はリーダーでの読書のみです。「既読にする」はライブラリを更新しますが、スコアにはなりません。これらの上限は 1 日に獲得できる量（XP、クエスト、ランキング）と、連続記録として数える最小ページ数を決めます。"
+  },
+  "board": {
+    "title": "クエスト",
+    "tabQuests": "クエスト",
+    "tabBadges": "実績",
+    "tabHouse": "家族",
+    "close": "閉じる",
+    "loading": "読み込み中…",
+    "loadFailed": "進捗を読み込めませんでした。",
+    "notReady": "まだ準備ができていません。"
+  },
+  "hero": {
+    "level": "レベル",
+    "xpToNext": "{xp} XP · 次まで {n}",
+    "dayStreak": "<b>{count}</b> 日連続",
+    "best": "最高 <b>{count}</b>",
+    "freezeTitle": "読書を休んだ日に自動で使われます",
+    "freezes": {
+      "other": "フリーズ <b>{count}</b> 個"
+    },
+    "goal": "{year} 年の読書目標",
+    "change": "変更",
+    "setGoal": "{year} 年の読書目標を設定",
+    "goalPrompt": "{year} 年に読む号数（0 で目標を解除）："
+  },
+  "quests": {
+    "weekly": "週間クエスト",
+    "rerollsLeft": {
+      "other": "引き直し残り {count} 回"
+    },
+    "xp": "+{xp} XP",
+    "complete": "達成",
+    "reroll": "引き直す",
+    "none": "クエストはまだありません。何か読んでからまた確認してください。ライブラリに未読がもう残っていない可能性もあります！",
+    "coop": "家族の協力クエスト",
+    "together": "みんなで {done} / {total} 号"
+  },
+  "badges": {
+    "title": "実績",
+    "unlocked": "解除済み"
+  },
+  "house": {
+    "title": "今月のランキング",
+    "issuesShort": "{count} 号",
+    "levelShort": "Lv {level}",
+    "issuesPages": "{issues} 号 · {pages} ページ",
+    "empty": "今月はまだ誰もランキングに載っていません。",
+    "optOut": "家族のランキングと協力クエストに自分を表示しない"
+  },
+  "party": {
+    "kicker": "レベルアップ",
+    "xpTotal": "合計 {xp} XP",
+    "newTitle": "新しい称号：{title}",
+    "newTitleSub": "プロフィールとランキングに表示されます",
+    "freeze": "連続記録フリーズを補充しました",
+    "freezeSub": "{count} 個保有 — 休んだ日をカバーします",
+    "nice": "やった",
+    "view": "クエストを見る"
+  },
+  "profile": {
+    "summary": "{xp} XP · {count} 日連続"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "読書をクエストに：XP とレベル、フリーズトークン付きの連続記録、実績、自分のライブラリから作る週替わりのクエストボード、家族のランキング"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "実績を解除：{name}",
+        "body": "{desc}（+{xp} XP）"
+      },
+      "gamifyToken": {
+        "title": "連続記録の報酬：フリーズトークンを獲得",
+        "body": "{days} 日連続で読書しました。フリーズトークンが休んだ日をカバーします。"
+      },
+      "gamifyLevel": {
+        "title": "レベル {level} — {tier}！",
+        "body": "レベルアップしました。連続記録フリーズを補充しました（{tokens} 個保有）。"
+      },
+      "gamifyQuest": {
+        "title": "クエスト達成：{title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "家族のクエストを達成しました！",
+        "body": "{title}"
+      }
+    }
+  }
+}

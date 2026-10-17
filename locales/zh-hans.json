@@ -1,0 +1,107 @@
+{
+  "menu": {
+    "label": "任务"
+  },
+  "settings": {
+    "intro": "把阅读变成冒险——经验值、连续阅读、成就，以及根据你的书库生成的每周任务板。",
+    "household": "家庭功能（每月合作任务 + 排行榜）",
+    "notify": "任务、成就和升级通知",
+    "celebration": "升级庆祝动画",
+    "questCount": "每周任务数",
+    "note": "每位用户还可以在任务板上将自己从家庭排行榜和合作任务中隐藏。关闭通知后进度仍会计算，只是不再提醒。",
+    "dailyIssueCap": "每日计入的期数",
+    "dailyPageCap": "每日计入的页数",
+    "streakMinPages": "连续阅读日的最少页数",
+    "fairPlay": "<b>公平原则</b>：只有在阅读器中阅读才能获得经验值、任务和连续阅读——“标记为已读”会更新书库，但不计分。这些上限决定单日最多能获得多少（经验值、任务、排行榜），以及至少读多少页才算作连续阅读日。"
+  },
+  "board": {
+    "title": "任务",
+    "tabQuests": "任务",
+    "tabBadges": "成就",
+    "tabHouse": "家庭",
+    "close": "关闭",
+    "loading": "加载中…",
+    "loadFailed": "无法加载你的进度。",
+    "notReady": "尚未就绪。"
+  },
+  "hero": {
+    "level": "等级",
+    "xpToNext": "{xp} XP · 距下一级 {n}",
+    "dayStreak": "连续 <b>{count}</b> 天",
+    "best": "最佳 <b>{count}</b>",
+    "freezeTitle": "漏掉一天时自动使用",
+    "freezes": {
+      "other": "<b>{count}</b> 个冻结"
+    },
+    "goal": "{year} 年阅读目标",
+    "change": "更改",
+    "setGoal": "设定 {year} 年阅读目标",
+    "goalPrompt": "{year} 年要读的期数（0 表示清除目标）："
+  },
+  "quests": {
+    "weekly": "每周任务",
+    "rerollsLeft": {
+      "other": "还可刷新 {count} 次"
+    },
+    "xp": "+{xp} XP",
+    "complete": "已完成",
+    "reroll": "刷新",
+    "none": "还没有任务——读点什么再回来看看，也可能你的书库里已经没有未读内容了！",
+    "coop": "家庭合作",
+    "together": "共同完成 {done} / {total} 期"
+  },
+  "badges": {
+    "title": "成就",
+    "unlocked": "已解锁"
+  },
+  "house": {
+    "title": "本月排行榜",
+    "issuesShort": "{count} 期",
+    "levelShort": "Lv {level}",
+    "issuesPages": "{issues} 期 · {pages} 页",
+    "empty": "本月排行榜上还没有人。",
+    "optOut": "在家庭排行榜和合作任务中隐藏我"
+  },
+  "party": {
+    "kicker": "升级",
+    "xpTotal": "共 {xp} XP",
+    "newTitle": "新称号：{title}",
+    "newTitleSub": "显示在你的个人资料和排行榜上",
+    "freeze": "已补充连续阅读冻结",
+    "freezeSub": "已储存 {count} 个——可保住漏掉的一天",
+    "nice": "太好了",
+    "view": "查看任务"
+  },
+  "profile": {
+    "summary": "{xp} XP · 连续 {count} 天"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "把阅读变成冒险：经验值和等级、带冻结令牌的连续阅读、成就、根据你自己的书库生成的每周任务板，以及家庭排行榜"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "解锁成就：{name}",
+        "body": "{desc}（+{xp} XP）"
+      },
+      "gamifyToken": {
+        "title": "连续阅读奖励：获得冻结令牌",
+        "body": "连续阅读 {days} 天——冻结令牌可保住漏掉的一天。"
+      },
+      "gamifyLevel": {
+        "title": "等级 {level}——{tier}！",
+        "body": "你升级了。已补充连续阅读冻结——共储存 {tokens} 个。"
+      },
+      "gamifyQuest": {
+        "title": "任务完成：{title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "家庭任务完成！",
+        "body": "{title}"
+      }
+    }
+  }
+}
