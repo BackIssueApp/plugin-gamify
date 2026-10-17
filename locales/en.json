@@ -1,5 +1,7 @@
 {
-  "menu": { "label": "Quests" },
+  "menu": {
+    "label": "Quests"
+  },
   "settings": {
     "intro": "Reading as a quest — XP, streaks, achievements and a weekly quest board built from your library.",
     "household": "Household features (monthly co-op quest + leaderboard)",
@@ -28,7 +30,10 @@
     "dayStreak": "<b>{count}</b> day streak",
     "best": "<b>{count}</b> best",
     "freezeTitle": "Auto-spent when you miss a day",
-    "freezes": { "one": "<b>{count}</b> freeze", "other": "<b>{count}</b> freezes" },
+    "freezes": {
+      "one": "<b>{count}</b> freeze",
+      "other": "<b>{count}</b> freezes"
+    },
     "goal": "{year} reading goal",
     "change": "change",
     "setGoal": "Set a {year} reading goal",
@@ -36,7 +41,10 @@
   },
   "quests": {
     "weekly": "Weekly quests",
-    "rerollsLeft": { "one": "{count} reroll left", "other": "{count} rerolls left" },
+    "rerollsLeft": {
+      "one": "{count} reroll left",
+      "other": "{count} rerolls left"
+    },
     "xp": "+{xp} XP",
     "complete": "Complete",
     "reroll": "reroll",
@@ -68,5 +76,34 @@
   },
   "profile": {
     "summary": "{xp} XP · {count}-day streak"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "Reading as a quest: XP and levels, streaks with freeze tokens, achievements, a weekly quest board built from your own library, and household leaderboards"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "Achievement unlocked: {name}",
+        "body": "{desc} (+{xp} XP)"
+      },
+      "gamifyToken": {
+        "title": "Streak reward: freeze token earned",
+        "body": "{days}-day reading streak — a freeze token will cover a missed day."
+      },
+      "gamifyLevel": {
+        "title": "Level {level} — {tier}!",
+        "body": "You leveled up. Streak freeze topped up — {tokens} banked."
+      },
+      "gamifyQuest": {
+        "title": "Quest complete: {title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "Household quest complete!",
+        "body": "{title}"
+      }
+    }
   }
 }

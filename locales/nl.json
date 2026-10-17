@@ -76,5 +76,34 @@
   },
   "profile": {
     "summary": "{xp} XP · {count} dagen op rij"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "Lezen als een queeste: XP en levels, reeksen met bevriezingstokens, prestaties, een wekelijks questbord uit je eigen bibliotheek en ranglijsten voor het huishouden"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "Prestatie ontgrendeld: {name}",
+        "body": "{desc} (+{xp} XP)"
+      },
+      "gamifyToken": {
+        "title": "Reeksbeloning: bevriezingstoken verdiend",
+        "body": "Leesreeks van {days} dagen: een bevriezingstoken dekt een gemiste dag."
+      },
+      "gamifyLevel": {
+        "title": "Level {level}: {tier}!",
+        "body": "Je bent een level gestegen. Bevriezingstokens aangevuld: {tokens} in voorraad."
+      },
+      "gamifyQuest": {
+        "title": "Queeste voltooid: {title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "Huishoudqueeste voltooid!",
+        "body": "{title}"
+      }
+    }
   }
 }

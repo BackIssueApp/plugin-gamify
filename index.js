@@ -69,11 +69,11 @@ export default function register(api) {
       maybeSpendFreeze(d, uid, t, caps().streakMin);
       ensureBoard(d, uid, t, questCount());
       for (const a of checkAchievements(d, uid, t, caps())) {
-        if (emit) notify(d, { type: 'gamify.achievement', category: 'system', level: 'info', title: `Achievement unlocked: ${a.title}`, body: `${a.desc} (+${a.xp} XP)`, userId: uid });
+        if (emit) notify(d, { type: 'gamify.achievement', category: 'system', level: 'info', title: `Achievement unlocked: ${a.title}`, body: `${a.desc} (+${a.xp} XP)`, params: { name: a.title, desc: a.desc, xp: a.xp }, userId: uid });
       }
       const s = streakOf(d, uid, t, caps().streakMin);
       if (maybeEarnToken(d, uid, s.current) && emit) {
-        notify(d, { type: 'gamify.token', category: 'system', level: 'info', title: `Streak reward: freeze token earned`, body: `${s.current}-day reading streak — a freeze token will cover a missed day.`, userId: uid });
+        notify(d, { type: 'gamify.token', category: 'system', level: 'info', title: `Streak reward: freeze token earned`, body: `${s.current}-day reading streak — a freeze token will cover a missed day.`, params: { days: s.current }, userId: uid });
       }
       // Level-up detection (reading XP moves without us; compare to last seen).
       const u = gamifyUser(d, uid);
@@ -85,7 +85,7 @@ export default function register(api) {
         if (emit && lvl > 0) {
           const after = gamifyUser(d, uid);
           const t2 = levelFor(xpOf(readStats(d, uid, caps()), after.xp_bonus)).title;
-          notify(d, { type: 'gamify.level', category: 'system', level: 'info', title: `Level ${lvl} — ${t2}!`, body: `You leveled up. Streak freeze topped up — ${after.tokens} banked.`, userId: uid });
+          notify(d, { type: 'gamify.level', category: 'system', level: 'info', title: `Level ${lvl} — ${t2}!`, body: `You leveled up. Streak freeze topped up — ${after.tokens} banked.`, params: { level: lvl, tier: t2, tokens: after.tokens }, userId: uid });
         }
       }
     }
@@ -93,8 +93,8 @@ export default function register(api) {
       if (!emit) continue;
       // A leftover co-op quest keeps ticking if household features are turned
       // off mid-month, but its completion shouldn't announce itself.
-      if (q.user_id == null) { if (household()) notify(d, { type: 'gamify.quest', category: 'system', level: 'info', title: 'Household quest complete!', body: q.title }); }
-      else notify(d, { type: 'gamify.quest', category: 'system', level: 'info', title: `Quest complete: ${q.title}`, body: `+${q.xp} XP`, userId: q.user_id });
+      if (q.user_id == null) { if (household()) notify(d, { type: 'gamify.quest.household', category: 'system', level: 'info', title: 'Household quest complete!', body: q.title, params: { title: q.title } }); }
+      else notify(d, { type: 'gamify.quest', category: 'system', level: 'info', title: `Quest complete: ${q.title}`, body: `+${q.xp} XP`, params: { title: q.title, xp: q.xp }, userId: q.user_id });
     }
   }
 

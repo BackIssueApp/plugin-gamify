@@ -76,5 +76,34 @@
   },
   "profile": {
     "summary": "{xp} XP · {count} Tage in Serie"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "Lesen als Quest: XP und Level, Serien mit Einfrier-Token, Erfolge, ein wöchentliches Quest-Board aus der eigenen Bibliothek und Haushalts-Bestenlisten"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "Erfolg freigeschaltet: {name}",
+        "body": "{desc} (+{xp} XP)"
+      },
+      "gamifyToken": {
+        "title": "Serienbelohnung: Einfrier-Token erhalten",
+        "body": "{days}-Tage-Leseserie — ein Einfrier-Token deckt einen verpassten Tag ab."
+      },
+      "gamifyLevel": {
+        "title": "Level {level} — {tier}!",
+        "body": "Du bist aufgestiegen. Einfrier-Token aufgefüllt — {tokens} auf Vorrat."
+      },
+      "gamifyQuest": {
+        "title": "Quest abgeschlossen: {title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "Haushalts-Quest abgeschlossen!",
+        "body": "{title}"
+      }
+    }
   }
 }

@@ -76,5 +76,34 @@
   },
   "profile": {
     "summary": "{xp} XP · {count} jours de suite"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "La lecture comme une quête : XP et niveaux, séries de jours avec jetons de gel, succès, un tableau de quêtes hebdomadaire bâti sur votre propre bibliothèque et des classements du foyer"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "Succès débloqué : {name}",
+        "body": "{desc} (+{xp} XP)"
+      },
+      "gamifyToken": {
+        "title": "Récompense de série : jeton de gel obtenu",
+        "body": "Série de lecture de {days} jours — un jeton de gel couvrira un jour manqué."
+      },
+      "gamifyLevel": {
+        "title": "Niveau {level} — {tier} !",
+        "body": "Vous avez gagné un niveau. Jetons de gel rechargés — {tokens} en réserve."
+      },
+      "gamifyQuest": {
+        "title": "Quête accomplie : {title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "Quête du foyer accomplie !",
+        "body": "{title}"
+      }
+    }
   }
 }

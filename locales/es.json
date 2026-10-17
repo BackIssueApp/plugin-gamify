@@ -76,5 +76,34 @@
   },
   "profile": {
     "summary": "{xp} XP · racha de {count} días"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "Leer como una misión: XP y niveles, rachas con fichas de congelación, logros, un tablón semanal de misiones creado a partir de tu propia biblioteca y clasificaciones del hogar"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "Logro desbloqueado: {name}",
+        "body": "{desc} (+{xp} XP)"
+      },
+      "gamifyToken": {
+        "title": "Recompensa de racha: ficha de congelación conseguida",
+        "body": "Racha de lectura de {days} días: una ficha de congelación cubrirá un día perdido."
+      },
+      "gamifyLevel": {
+        "title": "¡Nivel {level}: {tier}!",
+        "body": "Has subido de nivel. Fichas de congelación recargadas: {tokens} guardadas."
+      },
+      "gamifyQuest": {
+        "title": "Misión completada: {title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "¡Misión del hogar completada!",
+        "body": "{title}"
+      }
+    }
   }
 }

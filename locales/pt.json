@@ -76,5 +76,34 @@
   },
   "profile": {
     "summary": "{xp} XP · {count} dias seguidos"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "Ler como uma missão: XP e níveis, sequências com fichas de congelamento, conquistas, um quadro semanal de missões criado a partir da sua própria biblioteca e classificações do agregado"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "Conquista desbloqueada: {name}",
+        "body": "{desc} (+{xp} XP)"
+      },
+      "gamifyToken": {
+        "title": "Recompensa de sequência: ficha de congelamento ganha",
+        "body": "Sequência de leitura de {days} dias: uma ficha de congelamento cobrirá um dia perdido."
+      },
+      "gamifyLevel": {
+        "title": "Nível {level}: {tier}!",
+        "body": "Subiu de nível. Fichas de congelamento repostas: {tokens} guardadas."
+      },
+      "gamifyQuest": {
+        "title": "Missão concluída: {title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "Missão do agregado concluída!",
+        "body": "{title}"
+      }
+    }
   }
 }

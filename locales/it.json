@@ -76,5 +76,34 @@
   },
   "profile": {
     "summary": "{xp} XP · {count} giorni di fila"
+  },
+  "_shared": {
+    "plugins": {
+      "gamify": {
+        "description": "Leggere come una missione: XP e livelli, serie di giorni con gettoni di blocco, traguardi, una bacheca settimanale di missioni creata dalla tua biblioteca e classifiche della casa"
+      }
+    },
+    "notifications": {
+      "gamifyAchievement": {
+        "title": "Traguardo sbloccato: {name}",
+        "body": "{desc} (+{xp} XP)"
+      },
+      "gamifyToken": {
+        "title": "Premio di serie: gettone di blocco ottenuto",
+        "body": "Serie di lettura di {days} giorni: un gettone di blocco coprirà un giorno saltato."
+      },
+      "gamifyLevel": {
+        "title": "Livello {level}: {tier}!",
+        "body": "Sei salito di livello. Gettoni di blocco ricaricati: {tokens} in riserva."
+      },
+      "gamifyQuest": {
+        "title": "Missione completata: {title}",
+        "body": "+{xp} XP"
+      },
+      "gamifyQuestHousehold": {
+        "title": "Missione della casa completata!",
+        "body": "{title}"
+      }
+    }
   }
 }
