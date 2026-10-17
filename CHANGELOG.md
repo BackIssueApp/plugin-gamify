@@ -8,6 +8,14 @@ by the maintainers when changes merge, so concurrent PRs don't conflict here.
 
 ## [Unreleased]
 
+### Added
+
+- **Translated UI.** The Quests board, the level-up celebration, the profile
+  card and the settings card follow the language picked under Profile →
+  Language on BackIssue builds newer than 0.9.0, English on older ones.
+  Translations ship for French, German, Spanish, Italian, Portuguese and
+  Dutch in `locales/`.
+
 ## [1.0.0] — 2026-07-18
 
 Initial release: XP + levels from reading, daily streaks with freeze tokens, a

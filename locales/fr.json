@@ -1,0 +1,80 @@
+{
+  "menu": {
+    "label": "Quêtes"
+  },
+  "settings": {
+    "intro": "La lecture comme une quête : XP, séries de jours, succès et un tableau de quêtes hebdomadaire bâti à partir de votre bibliothèque.",
+    "household": "Fonctions du foyer (quête coopérative mensuelle + classement)",
+    "notify": "Notifications pour les quêtes, les succès et les montées de niveau",
+    "celebration": "Animation de montée de niveau",
+    "questCount": "Quêtes hebdomadaires",
+    "note": "Chaque personne peut en plus se masquer du classement du foyer et de la quête coopérative depuis le tableau des quêtes. Notifications désactivées, la progression compte toujours ; elle reste simplement silencieuse.",
+    "dailyIssueCap": "Numéros/jour comptabilisés",
+    "dailyPageCap": "Pages/jour comptabilisées",
+    "streakMinPages": "Pages min. pour un jour de série",
+    "fairPlay": "<b>Fair-play</b> : seule la lecture faite dans le lecteur rapporte des XP, des quêtes et des jours de série ; « marquer comme lu » met la bibliothèque à jour mais ne compte pas. Ces plafonds limitent ce qu’une seule journée peut rapporter (XP, quêtes, classement) et le minimum de pages pour qu’un jour compte dans la série."
+  },
+  "board": {
+    "title": "Quêtes",
+    "tabQuests": "Quêtes",
+    "tabBadges": "Succès",
+    "tabHouse": "Foyer",
+    "close": "Fermer",
+    "loading": "Chargement…",
+    "loadFailed": "Impossible de charger votre progression.",
+    "notReady": "Pas encore prêt."
+  },
+  "hero": {
+    "level": "Niveau",
+    "xpToNext": "{xp} XP · {n} avant le suivant",
+    "dayStreak": "<b>{count}</b> jours de suite",
+    "best": "<b>{count}</b> record",
+    "freezeTitle": "Utilisé automatiquement quand vous manquez un jour",
+    "freezes": {
+      "one": "<b>{count}</b> gel",
+      "other": "<b>{count}</b> gels"
+    },
+    "goal": "Objectif de lecture {year}",
+    "change": "modifier",
+    "setGoal": "Définir un objectif de lecture {year}",
+    "goalPrompt": "Numéros à lire en {year} (0 efface l’objectif) :"
+  },
+  "quests": {
+    "weekly": "Quêtes de la semaine",
+    "rerollsLeft": {
+      "one": "{count} relance restante",
+      "other": "{count} relances restantes"
+    },
+    "xp": "+{xp} XP",
+    "complete": "Terminée",
+    "reroll": "relancer",
+    "none": "Pas encore de quête : lisez quelque chose et revenez, ou votre bibliothèque n’a peut-être plus rien de non lu !",
+    "coop": "Coopération du foyer",
+    "together": "{done} / {total} numéros ensemble"
+  },
+  "badges": {
+    "title": "Succès",
+    "unlocked": "Débloqué"
+  },
+  "house": {
+    "title": "Classement du mois",
+    "issuesShort": "{count} num.",
+    "levelShort": "niv. {level}",
+    "issuesPages": "{issues} num. · {pages} p.",
+    "empty": "Personne au tableau ce mois-ci pour l’instant.",
+    "optOut": "Me masquer du classement du foyer et de la quête coopérative"
+  },
+  "party": {
+    "kicker": "Niveau supérieur",
+    "xpTotal": "{xp} XP au total",
+    "newTitle": "Nouveau titre : {title}",
+    "newTitleSub": "Affiché sur votre profil et le classement",
+    "freeze": "Gel de série rechargé",
+    "freezeSub": "{count} en réserve ; couvre un jour manqué",
+    "nice": "Super",
+    "view": "Voir les quêtes"
+  },
+  "profile": {
+    "summary": "{xp} XP · {count} jours de suite"
+  }
+}

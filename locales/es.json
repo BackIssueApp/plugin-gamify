@@ -1,0 +1,80 @@
+{
+  "menu": {
+    "label": "Misiones"
+  },
+  "settings": {
+    "intro": "Leer como una misión: XP, rachas, logros y un tablero semanal de misiones creado a partir de tu biblioteca.",
+    "household": "Funciones del hogar (misión cooperativa mensual + clasificación)",
+    "notify": "Notificaciones de misiones, logros y subidas de nivel",
+    "celebration": "Celebración al subir de nivel",
+    "questCount": "Misiones semanales",
+    "note": "Cada usuario puede además ocultarse de la clasificación del hogar y de la misión cooperativa desde el tablero de misiones. Con las notificaciones desactivadas el progreso sigue contando; solo queda en silencio.",
+    "dailyIssueCap": "Números/día que cuentan",
+    "dailyPageCap": "Páginas/día que cuentan",
+    "streakMinPages": "Páginas mín. para un día de racha",
+    "fairPlay": "<b>Juego limpio</b>: solo la lectura hecha en el lector da XP, misiones y rachas; «marcar como leído» actualiza la biblioteca pero no puntúa. Estos topes limitan lo que un solo día puede ganar (XP, misiones, clasificación) y cuántas páginas bastan para contar como día de racha."
+  },
+  "board": {
+    "title": "Misiones",
+    "tabQuests": "Misiones",
+    "tabBadges": "Logros",
+    "tabHouse": "Hogar",
+    "close": "Cerrar",
+    "loading": "Cargando…",
+    "loadFailed": "No se pudo cargar tu progreso.",
+    "notReady": "Aún no está listo."
+  },
+  "hero": {
+    "level": "Nivel",
+    "xpToNext": "{xp} XP · {n} para el siguiente",
+    "dayStreak": "<b>{count}</b> días de racha",
+    "best": "<b>{count}</b> récord",
+    "freezeTitle": "Se gasta automáticamente cuando faltas un día",
+    "freezes": {
+      "one": "<b>{count}</b> congelación",
+      "other": "<b>{count}</b> congelaciones"
+    },
+    "goal": "Objetivo de lectura {year}",
+    "change": "cambiar",
+    "setGoal": "Fijar un objetivo de lectura para {year}",
+    "goalPrompt": "Números a leer en {year} (0 borra el objetivo):"
+  },
+  "quests": {
+    "weekly": "Misiones semanales",
+    "rerollsLeft": {
+      "one": "Queda {count} cambio",
+      "other": "Quedan {count} cambios"
+    },
+    "xp": "+{xp} XP",
+    "complete": "Completada",
+    "reroll": "cambiar",
+    "none": "Aún no hay misiones: lee algo y vuelve, ¡o puede que tu biblioteca ya no tenga nada sin leer!",
+    "coop": "Cooperativa del hogar",
+    "together": "{done} / {total} números entre todos"
+  },
+  "badges": {
+    "title": "Logros",
+    "unlocked": "Desbloqueado"
+  },
+  "house": {
+    "title": "Clasificación de este mes",
+    "issuesShort": "{count} núm.",
+    "levelShort": "niv. {level}",
+    "issuesPages": "{issues} núm. · {pages} pág.",
+    "empty": "Nadie en la clasificación todavía este mes.",
+    "optOut": "Ocultarme de la clasificación del hogar y de la misión cooperativa"
+  },
+  "party": {
+    "kicker": "Subida de nivel",
+    "xpTotal": "{xp} XP en total",
+    "newTitle": "Nuevo título: {title}",
+    "newTitleSub": "Se muestra en tu perfil y en la clasificación",
+    "freeze": "Congelación de racha recargada",
+    "freezeSub": "{count} en reserva; cubre un día que faltes",
+    "nice": "Genial",
+    "view": "Ver misiones"
+  },
+  "profile": {
+    "summary": "{xp} XP · racha de {count} días"
+  }
+}

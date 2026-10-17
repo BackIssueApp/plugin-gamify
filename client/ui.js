@@ -26,6 +26,16 @@
 
   window.BackIssue.registerClient((api) => {
     const esc = api.escapeHtml;
+    // Translations: api.t when the host has it (BackIssue > 0.9.0), the inline
+    // English otherwise. Catalog: locales/<lang>.json, namespace "gamify".
+    // `en` may be a { one, other } pair; the fallback picks on params.count.
+    const fill = (s, p) => {
+      if (s && typeof s === 'object') s = p && Number(p.count) === 1 ? s.one : s.other;
+      return p ? String(s).replace(/\{(\w+)\}/g, (m, k) => (p[k] === undefined || p[k] === null ? m : String(p[k]))) : String(s);
+    };
+    const tr = (key, en, params) => { if (typeof api.t !== 'function') return fill(en, params); const v = api.t('gamify.' + key, params); return v === 'gamify.' + key ? fill(en, params) : v; };
+    const trh = (key, en, params) => (typeof api.th === 'function' && api.t('gamify.' + key) !== 'gamify.' + key ? api.th('gamify.' + key, params) : fill(en, params));
+    const te = (key, en, params) => esc(tr(key, en, params)); // for innerHTML
     let overlay = null;
     let me = null;
     let tab = 'quests';
@@ -41,20 +51,20 @@
       block.innerHTML =
         '<div class="src-toggle">' +
           '<label class="switch"><input id="set-gamifyEnabled" type="checkbox" checked><span class="switch__track"></span></label>' +
-          '<div class="src-toggle__text"><b>Gamify</b><span class="modal__note src-toggle__note">Reading as a quest — XP, streaks, achievements and a weekly quest board built from your library.</span></div>' +
+          '<div class="src-toggle__text"><b>Gamify</b><span class="modal__note src-toggle__note">' + te('settings.intro', 'Reading as a quest — XP, streaks, achievements and a weekly quest board built from your library.') + '</span></div>' +
         '</div>' +
         '<div id="gamify-config" class="src-config">' +
-          '<label class="field field--check"><input id="set-gamifyHousehold" type="checkbox" checked><span>Household features (monthly co-op quest + leaderboard)</span></label>' +
-          '<label class="field field--check"><input id="set-gamifyNotify" type="checkbox" checked><span>Notifications for quests, achievements and level-ups</span></label>' +
-          '<label class="field field--check"><input id="set-gamifyCelebration" type="checkbox" checked><span>Level-up celebration overlay</span></label>' +
-          '<label class="field"><span>Weekly quests</span><input id="set-gamifyQuestCount" type="number" min="1" max="4" placeholder="3"></label>' +
-          '<p class="modal__note">Individual users can additionally hide themselves from the household leaderboard and co-op quest on the Quests board. With notifications off, progress still counts — it just stays quiet.</p>' +
+          '<label class="field field--check"><input id="set-gamifyHousehold" type="checkbox" checked><span>' + te('settings.household', 'Household features (monthly co-op quest + leaderboard)') + '</span></label>' +
+          '<label class="field field--check"><input id="set-gamifyNotify" type="checkbox" checked><span>' + te('settings.notify', 'Notifications for quests, achievements and level-ups') + '</span></label>' +
+          '<label class="field field--check"><input id="set-gamifyCelebration" type="checkbox" checked><span>' + te('settings.celebration', 'Level-up celebration overlay') + '</span></label>' +
+          '<label class="field"><span>' + te('settings.questCount', 'Weekly quests') + '</span><input id="set-gamifyQuestCount" type="number" min="1" max="4" placeholder="3"></label>' +
+          '<p class="modal__note">' + te('settings.note', 'Individual users can additionally hide themselves from the household leaderboard and co-op quest on the Quests board. With notifications off, progress still counts — it just stays quiet.') + '</p>' +
           '<div class="fields-row">' +
-            '<label class="field"><span>Issues/day that count</span><input id="set-gamifyDailyIssueCap" type="number" min="1" max="200" placeholder="20"></label>' +
-            '<label class="field"><span>Pages/day that count</span><input id="set-gamifyDailyPageCap" type="number" min="50" max="5000" placeholder="500"></label>' +
-            '<label class="field"><span>Min pages for a streak day</span><input id="set-gamifyStreakMinPages" type="number" min="1" max="50" placeholder="3"></label>' +
+            '<label class="field"><span>' + te('settings.dailyIssueCap', 'Issues/day that count') + '</span><input id="set-gamifyDailyIssueCap" type="number" min="1" max="200" placeholder="20"></label>' +
+            '<label class="field"><span>' + te('settings.dailyPageCap', 'Pages/day that count') + '</span><input id="set-gamifyDailyPageCap" type="number" min="50" max="5000" placeholder="500"></label>' +
+            '<label class="field"><span>' + te('settings.streakMinPages', 'Min pages for a streak day') + '</span><input id="set-gamifyStreakMinPages" type="number" min="1" max="50" placeholder="3"></label>' +
           '</div>' +
-          '<p class="modal__note"><b>Fair play</b>: only reading done in the reader earns XP, quests and streaks — “mark read” updates the library but scores nothing. These caps bound what a single day can earn (XP, quests, leaderboard) and how few pages still count as a streak day.</p>' +
+          '<p class="modal__note">' + trh('settings.fairPlay', '<b>Fair play</b>: only reading done in the reader earns XP, quests and streaks — “mark read” updates the library but scores nothing. These caps bound what a single day can earn (XP, quests, leaderboard) and how few pages still count as a streak day.') + '</p>' +
         '</div>';
       setSlot.appendChild(block);
       const en = document.getElementById('set-gamifyEnabled');
@@ -86,14 +96,14 @@
       });
       overlay.innerHTML = '<div class="gx-panel"><div class="gx-head">' +
         '<span class="gx-head-icon">' + api.icon('target') + '</span>' +
-        '<b class="gx-head-title">Quests</b>' +
+        '<b class="gx-head-title">' + te('board.title', 'Quests') + '</b>' +
         '<div class="gx-tabs">' +
-          '<button data-t="quests" class="gx-tab is-active">Quests</button>' +
-          '<button data-t="badges" class="gx-tab">Achievements</button>' +
-          '<button data-t="house" class="gx-tab">Household</button>' +
+          '<button data-t="quests" class="gx-tab is-active">' + te('board.tabQuests', 'Quests') + '</button>' +
+          '<button data-t="badges" class="gx-tab">' + te('board.tabBadges', 'Achievements') + '</button>' +
+          '<button data-t="house" class="gx-tab">' + te('board.tabHouse', 'Household') + '</button>' +
         '</div>' +
-        '<button class="gx-x" aria-label="Close">' + api.icon('close') + '</button></div>' +
-        '<div class="gx-body" id="gx-body"><p class="gx-note">Loading…</p></div></div>';
+        '<button class="gx-x" aria-label="' + te('board.close', 'Close') + '">' + api.icon('close') + '</button></div>' +
+        '<div class="gx-body" id="gx-body"><p class="gx-note">' + te('board.loading', 'Loading…') + '</p></div></div>';
       overlay.querySelector('.gx-x').onclick = close;
       overlay.querySelectorAll('.gx-tab').forEach((b) => {
         b.onclick = () => {
@@ -111,8 +121,8 @@
 
     function render() {
       if (!overlay) return;
-      if (!me) { body().innerHTML = '<p class="gx-note">Couldn’t load your progress.</p>'; return; }
-      if (!me.ready) { body().innerHTML = '<p class="gx-note">' + esc(me.reason || 'Not ready yet.') + '</p>'; return; }
+      if (!me) { body().innerHTML = '<p class="gx-note">' + te('board.loadFailed', 'Couldn’t load your progress.') + '</p>'; return; }
+      if (!me.ready) { body().innerHTML = '<p class="gx-note">' + esc(me.reason || tr('board.notReady', 'Not ready yet.')) + '</p>'; return; }
       // Household features off → no Household tab (and never render its view).
       const houseOff = me.settings?.household === false;
       const houseTab = overlay.querySelector('[data-t="house"]');
@@ -130,22 +140,22 @@
       return '<div class="gx-hero"><div class="gx-hero-glow"></div>' +
         '<div class="gx-hero-top">' +
           '<div class="gx-ring" style="background:conic-gradient(var(--accent,#ff2d6f) ' + ringPct + '%, #2c2740 0)">' +
-            '<div class="gx-ring-in"><span class="gx-ring-num">' + L.level + '</span><span class="gx-ring-cap">Level</span></div>' +
+            '<div class="gx-ring-in"><span class="gx-ring-num">' + L.level + '</span><span class="gx-ring-cap">' + te('hero.level', 'Level') + '</span></div>' +
           '</div>' +
           '<div class="gx-hero-main"><div class="gx-hero-title">' + esc(L.title) + '</div>' +
             bar(L.into, L.span, 'gx-fill--xp') +
-            '<div class="gx-mono-sub">' + L.xp.toLocaleString() + ' XP · ' + (L.next - L.xp) + ' to next</div>' +
+            '<div class="gx-mono-sub">' + te('hero.xpToNext', '{xp} XP · {n} to next', { xp: L.xp.toLocaleString(), n: L.next - L.xp }) + '</div>' +
           '</div>' +
         '</div>' +
         '<div class="gx-chips">' +
-          '<span class="gx-chip gx-chip--flame"><span class="gx-flame">' + GX.flame + '</span><span><b>' + S.current + '</b> day streak</span></span>' +
-          '<span class="gx-chip"><span><b class="gx-strong">' + S.best + '</b> best</span></span>' +
-          '<span class="gx-chip" title="Auto-spent when you miss a day"><span class="gx-snow">' + GX.snow + '</span><span><b class="gx-strong">' + me.tokens + '</b> freeze' + (me.tokens === 1 ? '' : 's') + '</span></span>' +
+          '<span class="gx-chip gx-chip--flame"><span class="gx-flame">' + GX.flame + '</span><span>' + trh('hero.dayStreak', '<b>{count}</b> day streak', { count: S.current }) + '</span></span>' +
+          '<span class="gx-chip"><span>' + trh('hero.best', '<b>{count}</b> best', { count: S.best }) + '</span></span>' +
+          '<span class="gx-chip" title="' + te('hero.freezeTitle', 'Auto-spent when you miss a day') + '"><span class="gx-snow">' + GX.snow + '</span><span>' + trh('hero.freezes', { one: '<b>{count}</b> freeze', other: '<b>{count}</b> freezes' }, { count: me.tokens }) + '</span></span>' +
         '</div>' +
         '<div class="gx-goal">' + (G.target
-          ? '<div class="gx-goal-head"><span class="gx-dim">' + G.year + ' reading goal</span><span class="gx-mono"><b class="gx-green">' + G.read + '</b> / ' + G.target + '</span></div>' +
-            '<div class="gx-goal-row">' + bar(G.read, G.target, 'gx-fill--goal') + '<button class="gx-link" id="gx-goal-edit">change</button></div>'
-          : '<button class="gx-goal-set" id="gx-goal-edit">Set a ' + G.year + ' reading goal</button>') +
+          ? '<div class="gx-goal-head"><span class="gx-dim">' + te('hero.goal', '{year} reading goal', { year: G.year }) + '</span><span class="gx-mono"><b class="gx-green">' + G.read + '</b> / ' + G.target + '</span></div>' +
+            '<div class="gx-goal-row">' + bar(G.read, G.target, 'gx-fill--goal') + '<button class="gx-link" id="gx-goal-edit">' + te('hero.change', 'change') + '</button></div>'
+          : '<button class="gx-goal-set" id="gx-goal-edit">' + te('hero.setGoal', 'Set a {year} reading goal', { year: G.year }) + '</button>') +
         '</div></div>';
     }
 
@@ -153,7 +163,7 @@
       const btn = body().querySelector('#gx-goal-edit');
       if (!btn) return;
       btn.onclick = async () => {
-        const v = prompt('Issues to read in ' + me.goal.year + ' (0 clears the goal):', me.goal.target || 100);
+        const v = prompt(tr('hero.goalPrompt', 'Issues to read in {year} (0 clears the goal):', { year: me.goal.year }), me.goal.target || 100);
         if (v == null) return;
         try { await api.post('/api/gamify/goal', { target: Number(v) }); await load(); render(); }
         catch (e) { api.toast(String(e), 'error'); }
@@ -164,25 +174,25 @@
     function renderQuests() {
       const qs = me.quests || [];
       body().innerHTML = heroCard() +
-        '<div class="gx-sec"><span>Weekly quests</span><span class="gx-mono gx-dim2">' + me.rerollsLeft + ' reroll' + (me.rerollsLeft === 1 ? '' : 's') + ' left</span></div>' +
+        '<div class="gx-sec"><span>' + te('quests.weekly', 'Weekly quests') + '</span><span class="gx-mono gx-dim2">' + te('quests.rerollsLeft', { one: '{count} reroll left', other: '{count} rerolls left' }, { count: me.rerollsLeft }) + '</span></div>' +
         (qs.length ? qs.map((q, i) => {
           const done = q.status === 'done';
           return '<div class="gx-quest' + (done ? ' is-done' : '') + '">' +
             '<span class="gx-quest-icon">' + GX[QUEST_ICONS[i % QUEST_ICONS.length]] + '</span>' +
             '<div class="gx-quest-main">' +
-              '<div class="gx-quest-top"><span class="gx-quest-title">' + esc(q.title) + '</span><span class="gx-xp">+' + q.xp + ' XP</span></div>' +
+              '<div class="gx-quest-top"><span class="gx-quest-title">' + esc(q.title) + '</span><span class="gx-xp">' + te('quests.xp', '+{xp} XP', { xp: q.xp }) + '</span></div>' +
               bar(q.progress, q.target, done ? 'gx-fill--done' : '') +
               '<div class="gx-quest-foot"><span class="gx-mono ' + (done ? 'gx-green' : 'gx-dim') + '">' + q.progress + ' / ' + q.target + '</span>' +
-              (done ? '<span class="gx-done-tag">' + api.icon('check') + 'Complete</span>'
-                : (me.rerollsLeft > 0 ? '<button class="gx-reroll" data-reroll="' + q.id + '">' + GX.reroll + 'reroll</button>' : '')) +
+              (done ? '<span class="gx-done-tag">' + api.icon('check') + te('quests.complete', 'Complete') + '</span>'
+                : (me.rerollsLeft > 0 ? '<button class="gx-reroll" data-reroll="' + q.id + '">' + GX.reroll + te('quests.reroll', 'reroll') + '</button>' : '')) +
               '</div>' +
             '</div></div>';
         }).join('')
-          : '<p class="gx-note">No quests yet — read something and check back, or your library may have nothing left unread!</p>') +
-        (me.coop ? '<div class="gx-sec"><span>Household co-op</span></div>' +
+          : '<p class="gx-note">' + te('quests.none', 'No quests yet — read something and check back, or your library may have nothing left unread!') + '</p>') +
+        (me.coop ? '<div class="gx-sec"><span>' + te('quests.coop', 'Household co-op') + '</span></div>' +
           '<div class="gx-coop"><div class="gx-coop-top"><span class="gx-coop-icon">' + api.icon('users') + '</span><span class="gx-quest-title">' + esc(me.coop.title) + '</span></div>' +
           bar(me.coop.progress, me.coop.target, 'gx-fill--coop') +
-          '<span class="gx-mono gx-dim">' + me.coop.progress + ' / ' + me.coop.target + ' issues together</span></div>' : '');
+          '<span class="gx-mono gx-dim">' + te('quests.together', '{done} / {total} issues together', { done: me.coop.progress, total: me.coop.target }) + '</span></div>' : '');
       wireGoal();
       body().querySelectorAll('[data-reroll]').forEach((b) => {
         b.onclick = async () => {
@@ -198,14 +208,14 @@
       const a = me.achievements || [];
       const got = a.filter((x) => x.unlockedAt).length;
       body().innerHTML = heroCard() +
-        '<div class="gx-sec"><span>Achievements</span><span class="gx-mono gx-dim2">' + got + ' / ' + a.length + '</span><span class="gx-rule"></span></div>' +
+        '<div class="gx-sec"><span>' + te('badges.title', 'Achievements') + '</span><span class="gx-mono gx-dim2">' + got + ' / ' + a.length + '</span><span class="gx-rule"></span></div>' +
         '<div class="gx-badges">' + a.map((x) => {
           const on = !!x.unlockedAt;
           return '<div class="gx-badge' + (on ? ' is-got' : '') + '" title="' + esc(x.desc) + '">' +
             '<div class="gx-badge-top"><span class="gx-medal">' + GX.medal + '</span><span class="gx-badge-title">' + esc(x.title) + '</span></div>' +
             '<span class="gx-badge-desc">' + esc(x.desc) + '</span>' +
-            '<div class="gx-badge-foot"><span class="gx-badge-xp">+' + x.xp + ' XP</span>' +
-            (on ? '<span class="gx-unlocked">Unlocked</span>' : '<span class="gx-lock">' + GX.lock + '</span>') + '</div></div>';
+            '<div class="gx-badge-foot"><span class="gx-badge-xp">' + te('quests.xp', '+{xp} XP', { xp: x.xp }) + '</span>' +
+            (on ? '<span class="gx-unlocked">' + te('badges.unlocked', 'Unlocked') + '</span>' : '<span class="gx-lock">' + GX.lock + '</span>') + '</div></div>';
         }).join('') + '</div>';
       wireGoal();
     }
@@ -222,12 +232,12 @@
         return '<div class="gx-pod-col">' +
           '<span class="gx-pod-avatar' + (big ? ' is-big' : '') + '" style="background:' + p.c + ';box-shadow:0 0 0 3px ' + p.c + '44">' + esc(r.username.slice(0, 1).toUpperCase()) + '</span>' +
           '<span class="gx-pod-name">' + esc(r.username) + '</span>' +
-          '<span class="gx-mono gx-dim">' + r.issues + ' iss</span>' +
+          '<span class="gx-mono gx-dim">' + te('house.issuesShort', '{count} iss', { count: r.issues }) + '</span>' +
           '<div class="gx-pedestal" style="height:' + p.h + 'px;border-color:' + p.c + '55;background:linear-gradient(180deg,' + p.c + '33,transparent);color:' + p.c + '">' + (idx + 1) + '</div>' +
           '</div>';
       }).join('') : '';
       body().innerHTML = heroCard() +
-        '<div class="gx-sec"><span>This month’s leaderboard</span><span class="gx-mono gx-dim2">' + esc(lb.month || '') + '</span><span class="gx-rule"></span></div>' +
+        '<div class="gx-sec"><span>' + te('house.title', 'This month’s leaderboard') + '</span><span class="gx-mono gx-dim2">' + esc(lb.month || '') + '</span><span class="gx-rule"></span></div>' +
         (podium ? '<div class="gx-podium">' + podium + '</div>' : '') +
         (rows.length ? rows.map((r, i) => {
           const you = r.userId === myId;
@@ -235,10 +245,10 @@
           return '<div class="gx-lb-row' + (you ? ' is-you' : '') + '">' +
             '<span class="gx-lb-rank" style="color:' + rankC + '">' + (i + 1) + '</span>' +
             '<span class="gx-lb-avatar' + (you ? ' is-you' : '') + '">' + esc(r.username.slice(0, 1).toUpperCase()) + '</span>' +
-            '<span class="gx-lb-name">' + esc(r.username) + ' <span class="gx-mono gx-dim">lv ' + r.level + '</span></span>' +
-            '<span class="gx-mono gx-dim">' + r.issues + ' iss · ' + r.pages + ' pp</span></div>';
-        }).join('') : '<p class="gx-note">Nobody on the board yet this month.</p>') +
-        '<label class="gx-opt"><span class="switch"><input type="checkbox" id="gx-optout"' + (me.optOut ? ' checked' : '') + '><span class="switch__track"></span></span>Hide me from the household leaderboard and co-op quest</label>';
+            '<span class="gx-lb-name">' + esc(r.username) + ' <span class="gx-mono gx-dim">' + te('house.levelShort', 'lv {level}', { level: r.level }) + '</span></span>' +
+            '<span class="gx-mono gx-dim">' + te('house.issuesPages', '{issues} iss · {pages} pp', { issues: r.issues, pages: r.pages }) + '</span></div>';
+        }).join('') : '<p class="gx-note">' + te('house.empty', 'Nobody on the board yet this month.') + '</p>') +
+        '<label class="gx-opt"><span class="switch"><input type="checkbox" id="gx-optout"' + (me.optOut ? ' checked' : '') + '><span class="switch__track"></span></span>' + te('house.optOut', 'Hide me from the household leaderboard and co-op quest') + '</label>';
       wireGoal();
       body().querySelector('#gx-optout').onchange = async (e) => {
         await api.post('/api/gamify/optout', { optOut: e.target.checked });
@@ -276,22 +286,22 @@
       }).join('');
       el.innerHTML = '<div class="gx-party-card">' + confetti +
         '<div class="gx-party-in"><div class="gx-party-sheen"></div><div class="gx-party-glow"></div>' +
-          '<div class="gx-party-kicker">Level up</div>' +
+          '<div class="gx-party-kicker">' + te('party.kicker', 'Level up') + '</div>' +
           '<div class="gx-party-ring"><div class="gx-party-ringfill"></div>' +
-            '<div class="gx-party-ring-in"><span class="gx-party-num">' + next + '</span><span class="gx-ring-cap">Level</span></div>' +
+            '<div class="gx-party-ring-in"><span class="gx-party-num">' + next + '</span><span class="gx-ring-cap">' + te('hero.level', 'Level') + '</span></div>' +
             '<div class="gx-party-from">' + prev + ' → ' + next + '</div>' +
           '</div>' +
           '<div class="gx-party-title">' + esc(me.level.title) + '</div>' +
-          '<div class="gx-mono gx-dim">' + me.level.xp.toLocaleString() + ' XP total</div>' +
+          '<div class="gx-mono gx-dim">' + te('party.xpTotal', '{xp} XP total', { xp: me.level.xp.toLocaleString() }) + '</div>' +
           '<div class="gx-party-rewards">' +
             '<div class="gx-reward"><span class="gx-reward-icon" style="color:var(--accent,#ff2d6f)">' + GX.medal + '</span>' +
-              '<div><div class="gx-reward-title">New title: ' + esc(me.level.title) + '</div><div class="gx-reward-sub">Shown on your profile and the leaderboard</div></div></div>' +
+              '<div><div class="gx-reward-title">' + te('party.newTitle', 'New title: {title}', { title: me.level.title }) + '</div><div class="gx-reward-sub">' + te('party.newTitleSub', 'Shown on your profile and the leaderboard') + '</div></div></div>' +
             '<div class="gx-reward"><span class="gx-reward-icon" style="color:#2bd4d9">' + GX.snow + '</span>' +
-              '<div><div class="gx-reward-title">Streak freeze topped up</div><div class="gx-reward-sub">' + me.tokens + ' banked — covers a day you miss</div></div></div>' +
+              '<div><div class="gx-reward-title">' + te('party.freeze', 'Streak freeze topped up') + '</div><div class="gx-reward-sub">' + te('party.freezeSub', '{count} banked — covers a day you miss', { count: me.tokens }) + '</div></div></div>' +
           '</div>' +
           '<div class="gx-party-actions">' +
-            '<button class="gx-party-nice">Nice</button>' +
-            '<button class="gx-party-view">View quests</button>' +
+            '<button class="gx-party-nice">' + te('party.nice', 'Nice') + '</button>' +
+            '<button class="gx-party-view">' + te('party.view', 'View quests') + '</button>' +
           '</div>' +
         '</div></div>';
       const done = () => el.remove();
@@ -316,7 +326,7 @@
             '<span class="gx-ring gx-ring--sm" style="background:conic-gradient(var(--accent,#ff2d6f) ' + ringPct + '%, #2c2740 0)">' +
               '<span class="gx-ring-in"><span class="gx-ring-num">' + me.level.level + '</span></span></span>' +
             '<span class="gx-profile-text"><b>' + esc(me.level.title) + '</b>' +
-            '<span class="gx-mono gx-dim">' + me.level.xp.toLocaleString() + ' XP · ' + me.streak.current + '-day streak</span></span>' +
+            '<span class="gx-mono gx-dim">' + te('profile.summary', '{xp} XP · {count}-day streak', { xp: me.level.xp.toLocaleString(), count: me.streak.current }) + '</span></span>' +
             '</button>';
           box.querySelector('.gx-profile-card').onclick = open;
         } catch { /* board still reachable from the menu */ }
@@ -326,6 +336,6 @@
       load().catch(() => {});
     }
 
-    menuBtn = api.addMenuAction('Quests', open, api.icon('target'), { section: 'Reading' });
+    menuBtn = api.addMenuAction(tr('menu.label', 'Quests'), open, api.icon('target'), { section: 'Reading' });
   });
 })();

@@ -1,0 +1,80 @@
+{
+  "menu": {
+    "label": "Quests"
+  },
+  "settings": {
+    "intro": "Lesen als Quest: XP, Serien, Erfolge und ein wöchentliches Quest-Board aus deiner Bibliothek.",
+    "household": "Haushaltsfunktionen (monatliche Koop-Quest + Rangliste)",
+    "notify": "Benachrichtigungen für Quests, Erfolge und Levelaufstiege",
+    "celebration": "Levelaufstieg feiern (Overlay)",
+    "questCount": "Wöchentliche Quests",
+    "note": "Einzelne Nutzer können sich zusätzlich auf dem Quest-Board aus Rangliste und Koop-Quest des Haushalts ausblenden. Ohne Benachrichtigungen zählt der Fortschritt weiter, nur eben still.",
+    "dailyIssueCap": "Hefte/Tag, die zählen",
+    "dailyPageCap": "Seiten/Tag, die zählen",
+    "streakMinPages": "Mindestseiten für einen Serientag",
+    "fairPlay": "<b>Fair Play</b>: Nur Lesen im Reader bringt XP, Quests und Serientage; „als gelesen markieren“ aktualisiert die Bibliothek, zählt aber nicht. Diese Grenzen deckeln, was ein einzelner Tag einbringen kann (XP, Quests, Rangliste) und wie wenige Seiten noch als Serientag gelten."
+  },
+  "board": {
+    "title": "Quests",
+    "tabQuests": "Quests",
+    "tabBadges": "Erfolge",
+    "tabHouse": "Haushalt",
+    "close": "Schließen",
+    "loading": "Wird geladen …",
+    "loadFailed": "Fortschritt konnte nicht geladen werden.",
+    "notReady": "Noch nicht bereit."
+  },
+  "hero": {
+    "level": "Level",
+    "xpToNext": "{xp} XP · {n} bis zum nächsten",
+    "dayStreak": "<b>{count}</b> Tage in Serie",
+    "best": "<b>{count}</b> Rekord",
+    "freezeTitle": "Wird automatisch eingesetzt, wenn ein Tag ausfällt",
+    "freezes": {
+      "one": "<b>{count}</b> Joker",
+      "other": "<b>{count}</b> Joker"
+    },
+    "goal": "Leseziel {year}",
+    "change": "ändern",
+    "setGoal": "Leseziel für {year} festlegen",
+    "goalPrompt": "Hefte, die {year} gelesen werden sollen (0 löscht das Ziel):"
+  },
+  "quests": {
+    "weekly": "Wöchentliche Quests",
+    "rerollsLeft": {
+      "one": "{count} Neuwurf übrig",
+      "other": "{count} Neuwürfe übrig"
+    },
+    "xp": "+{xp} XP",
+    "complete": "Erledigt",
+    "reroll": "neu würfeln",
+    "none": "Noch keine Quests: etwas lesen und wiederkommen, oder die Bibliothek hat nichts Ungelesenes mehr!",
+    "coop": "Koop-Quest des Haushalts",
+    "together": "{done} / {total} Hefte gemeinsam"
+  },
+  "badges": {
+    "title": "Erfolge",
+    "unlocked": "Freigeschaltet"
+  },
+  "house": {
+    "title": "Rangliste dieses Monats",
+    "issuesShort": "{count} Hefte",
+    "levelShort": "Lv. {level}",
+    "issuesPages": "{issues} Hefte · {pages} S.",
+    "empty": "Diesen Monat steht noch niemand auf der Liste.",
+    "optOut": "Mich aus Rangliste und Koop-Quest des Haushalts ausblenden"
+  },
+  "party": {
+    "kicker": "Levelaufstieg",
+    "xpTotal": "{xp} XP insgesamt",
+    "newTitle": "Neuer Titel: {title}",
+    "newTitleSub": "Auf Profil und Rangliste zu sehen",
+    "freeze": "Serien-Joker aufgefüllt",
+    "freezeSub": "{count} auf Vorrat; deckt einen verpassten Tag ab",
+    "nice": "Schön",
+    "view": "Quests ansehen"
+  },
+  "profile": {
+    "summary": "{xp} XP · {count} Tage in Serie"
+  }
+}

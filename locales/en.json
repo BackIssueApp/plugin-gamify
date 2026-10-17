@@ -1,0 +1,72 @@
+{
+  "menu": { "label": "Quests" },
+  "settings": {
+    "intro": "Reading as a quest — XP, streaks, achievements and a weekly quest board built from your library.",
+    "household": "Household features (monthly co-op quest + leaderboard)",
+    "notify": "Notifications for quests, achievements and level-ups",
+    "celebration": "Level-up celebration overlay",
+    "questCount": "Weekly quests",
+    "note": "Individual users can additionally hide themselves from the household leaderboard and co-op quest on the Quests board. With notifications off, progress still counts — it just stays quiet.",
+    "dailyIssueCap": "Issues/day that count",
+    "dailyPageCap": "Pages/day that count",
+    "streakMinPages": "Min pages for a streak day",
+    "fairPlay": "<b>Fair play</b>: only reading done in the reader earns XP, quests and streaks — “mark read” updates the library but scores nothing. These caps bound what a single day can earn (XP, quests, leaderboard) and how few pages still count as a streak day."
+  },
+  "board": {
+    "title": "Quests",
+    "tabQuests": "Quests",
+    "tabBadges": "Achievements",
+    "tabHouse": "Household",
+    "close": "Close",
+    "loading": "Loading…",
+    "loadFailed": "Couldn’t load your progress.",
+    "notReady": "Not ready yet."
+  },
+  "hero": {
+    "level": "Level",
+    "xpToNext": "{xp} XP · {n} to next",
+    "dayStreak": "<b>{count}</b> day streak",
+    "best": "<b>{count}</b> best",
+    "freezeTitle": "Auto-spent when you miss a day",
+    "freezes": { "one": "<b>{count}</b> freeze", "other": "<b>{count}</b> freezes" },
+    "goal": "{year} reading goal",
+    "change": "change",
+    "setGoal": "Set a {year} reading goal",
+    "goalPrompt": "Issues to read in {year} (0 clears the goal):"
+  },
+  "quests": {
+    "weekly": "Weekly quests",
+    "rerollsLeft": { "one": "{count} reroll left", "other": "{count} rerolls left" },
+    "xp": "+{xp} XP",
+    "complete": "Complete",
+    "reroll": "reroll",
+    "none": "No quests yet — read something and check back, or your library may have nothing left unread!",
+    "coop": "Household co-op",
+    "together": "{done} / {total} issues together"
+  },
+  "badges": {
+    "title": "Achievements",
+    "unlocked": "Unlocked"
+  },
+  "house": {
+    "title": "This month’s leaderboard",
+    "issuesShort": "{count} iss",
+    "levelShort": "lv {level}",
+    "issuesPages": "{issues} iss · {pages} pp",
+    "empty": "Nobody on the board yet this month.",
+    "optOut": "Hide me from the household leaderboard and co-op quest"
+  },
+  "party": {
+    "kicker": "Level up",
+    "xpTotal": "{xp} XP total",
+    "newTitle": "New title: {title}",
+    "newTitleSub": "Shown on your profile and the leaderboard",
+    "freeze": "Streak freeze topped up",
+    "freezeSub": "{count} banked — covers a day you miss",
+    "nice": "Nice",
+    "view": "View quests"
+  },
+  "profile": {
+    "summary": "{xp} XP · {count}-day streak"
+  }
+}

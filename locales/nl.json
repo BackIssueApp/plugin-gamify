@@ -1,0 +1,80 @@
+{
+  "menu": {
+    "label": "Quests"
+  },
+  "settings": {
+    "intro": "Lezen als een quest: XP, reeksen dagen, prestaties en een wekelijks questbord op basis van je bibliotheek.",
+    "household": "Huishoudfuncties (maandelijkse co-opquest + ranglijst)",
+    "notify": "Meldingen voor quests, prestaties en levelstijgingen",
+    "celebration": "Feestje bij een nieuw level",
+    "questCount": "Wekelijkse quests",
+    "note": "Iedereen kan zichzelf daarnaast op het questbord verbergen voor de ranglijst en de co-opquest van het huishouden. Met meldingen uit telt de voortgang gewoon mee; het blijft alleen stil.",
+    "dailyIssueCap": "Nummers/dag die tellen",
+    "dailyPageCap": "Pagina’s/dag die tellen",
+    "streakMinPages": "Min. pagina’s voor een reeksdag",
+    "fairPlay": "<b>Fair play</b>: alleen lezen in de lezer levert XP, quests en reeksdagen op; ‘markeer als gelezen’ werkt de bibliotheek bij maar scoort niets. Deze limieten begrenzen wat één dag kan opleveren (XP, quests, ranglijst) en hoe weinig pagina’s nog als reeksdag tellen."
+  },
+  "board": {
+    "title": "Quests",
+    "tabQuests": "Quests",
+    "tabBadges": "Prestaties",
+    "tabHouse": "Huishouden",
+    "close": "Sluiten",
+    "loading": "Laden…",
+    "loadFailed": "Je voortgang kon niet worden geladen.",
+    "notReady": "Nog niet klaar."
+  },
+  "hero": {
+    "level": "Level",
+    "xpToNext": "{xp} XP · nog {n} tot de volgende",
+    "dayStreak": "<b>{count}</b> dagen op rij",
+    "best": "<b>{count}</b> record",
+    "freezeTitle": "Wordt automatisch gebruikt als je een dag mist",
+    "freezes": {
+      "one": "<b>{count}</b> bevriezing",
+      "other": "<b>{count}</b> bevriezingen"
+    },
+    "goal": "Leesdoel {year}",
+    "change": "wijzigen",
+    "setGoal": "Een leesdoel voor {year} instellen",
+    "goalPrompt": "Nummers om te lezen in {year} (0 wist het doel):"
+  },
+  "quests": {
+    "weekly": "Wekelijkse quests",
+    "rerollsLeft": {
+      "one": "{count} herkansing over",
+      "other": "{count} herkansingen over"
+    },
+    "xp": "+{xp} XP",
+    "complete": "Voltooid",
+    "reroll": "opnieuw",
+    "none": "Nog geen quests: lees iets en kom terug, of je bibliotheek heeft niets ongelezens meer!",
+    "coop": "Co-op van het huishouden",
+    "together": "{done} / {total} nummers samen"
+  },
+  "badges": {
+    "title": "Prestaties",
+    "unlocked": "Ontgrendeld"
+  },
+  "house": {
+    "title": "Ranglijst van deze maand",
+    "issuesShort": "{count} nrs.",
+    "levelShort": "lvl {level}",
+    "issuesPages": "{issues} nrs. · {pages} pag.",
+    "empty": "Nog niemand op de ranglijst deze maand.",
+    "optOut": "Verberg mij voor de ranglijst en de co-opquest van het huishouden"
+  },
+  "party": {
+    "kicker": "Level omhoog",
+    "xpTotal": "{xp} XP in totaal",
+    "newTitle": "Nieuwe titel: {title}",
+    "newTitleSub": "Te zien op je profiel en de ranglijst",
+    "freeze": "Reeksbevriezing aangevuld",
+    "freezeSub": "{count} in voorraad; dekt een gemiste dag",
+    "nice": "Mooi",
+    "view": "Quests bekijken"
+  },
+  "profile": {
+    "summary": "{xp} XP · {count} dagen op rij"
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "menu": {
+    "label": "Missioni"
+  },
+  "settings": {
+    "intro": "Leggere come una missione: XP, serie di giorni, traguardi e una bacheca settimanale di missioni costruita dalla tua biblioteca.",
+    "household": "Funzioni della casa (missione cooperativa mensile + classifica)",
+    "notify": "Notifiche per missioni, traguardi e passaggi di livello",
+    "celebration": "Festeggiamento al passaggio di livello",
+    "questCount": "Missioni settimanali",
+    "note": "Ogni utente può inoltre nascondersi dalla classifica della casa e dalla missione cooperativa dalla bacheca delle missioni. Con le notifiche spente i progressi contano comunque; restano solo silenziosi.",
+    "dailyIssueCap": "Albi/giorno che contano",
+    "dailyPageCap": "Pagine/giorno che contano",
+    "streakMinPages": "Pagine min. per un giorno di serie",
+    "fairPlay": "<b>Fair play</b>: solo la lettura fatta nel lettore dà XP, missioni e giorni di serie; «segna come letto» aggiorna la biblioteca ma non conta. Questi limiti fissano quanto può rendere un singolo giorno (XP, missioni, classifica) e quante pagine bastano perché un giorno conti nella serie."
+  },
+  "board": {
+    "title": "Missioni",
+    "tabQuests": "Missioni",
+    "tabBadges": "Traguardi",
+    "tabHouse": "Casa",
+    "close": "Chiudi",
+    "loading": "Caricamento…",
+    "loadFailed": "Impossibile caricare i tuoi progressi.",
+    "notReady": "Non ancora pronto."
+  },
+  "hero": {
+    "level": "Livello",
+    "xpToNext": "{xp} XP · {n} al prossimo",
+    "dayStreak": "<b>{count}</b> giorni di fila",
+    "best": "<b>{count}</b> record",
+    "freezeTitle": "Usato automaticamente quando salti un giorno",
+    "freezes": {
+      "one": "<b>{count}</b> congelamento",
+      "other": "<b>{count}</b> congelamenti"
+    },
+    "goal": "Obiettivo di lettura {year}",
+    "change": "cambia",
+    "setGoal": "Imposta un obiettivo di lettura per il {year}",
+    "goalPrompt": "Albi da leggere nel {year} (0 cancella l’obiettivo):"
+  },
+  "quests": {
+    "weekly": "Missioni della settimana",
+    "rerollsLeft": {
+      "one": "{count} cambio rimasto",
+      "other": "{count} cambi rimasti"
+    },
+    "xp": "+{xp} XP",
+    "complete": "Completata",
+    "reroll": "cambia",
+    "none": "Nessuna missione per ora: leggi qualcosa e torna, oppure la tua biblioteca non ha più nulla da leggere!",
+    "coop": "Cooperativa della casa",
+    "together": "{done} / {total} albi insieme"
+  },
+  "badges": {
+    "title": "Traguardi",
+    "unlocked": "Sbloccato"
+  },
+  "house": {
+    "title": "Classifica del mese",
+    "issuesShort": "{count} albi",
+    "levelShort": "liv. {level}",
+    "issuesPages": "{issues} albi · {pages} pag.",
+    "empty": "Nessuno in classifica per ora questo mese.",
+    "optOut": "Nascondimi dalla classifica della casa e dalla missione cooperativa"
+  },
+  "party": {
+    "kicker": "Nuovo livello",
+    "xpTotal": "{xp} XP in totale",
+    "newTitle": "Nuovo titolo: {title}",
+    "newTitleSub": "Mostrato sul profilo e in classifica",
+    "freeze": "Congelamento della serie ricaricato",
+    "freezeSub": "{count} in riserva; copre un giorno saltato",
+    "nice": "Bello",
+    "view": "Vedi le missioni"
+  },
+  "profile": {
+    "summary": "{xp} XP · {count} giorni di fila"
+  }
+}
