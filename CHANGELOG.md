@@ -18,6 +18,13 @@ by the maintainers when changes merge, so concurrent PRs don't conflict here.
   Also covers the permission, job and library-type labels, the plugin
   description and the notification titles shown in BackIssue’s own screens.
 
+### Changed
+
+- **Faster XP and quest writes.** The plugin's database connection now uses
+  the same write mode as the rest of BackIssue (WAL with normal sync), so
+  awarding XP and progressing quests no longer waits on a full disk sync for
+  every write. Still safe across an app crash.
+
 ## [1.0.0] — 2026-07-18
 
 Initial release: XP + levels from reading, daily streaks with freeze tokens, a

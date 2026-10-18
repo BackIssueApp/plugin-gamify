@@ -8,6 +8,7 @@ export function openGamifyStore(dbPath) {
   const db = new Database(dbPath);
   db.pragma('journal_mode = WAL');
   db.pragma('busy_timeout = 5000');
+  db.pragma('synchronous = NORMAL'); // per-connection; match the main handle
   db.exec(`
     CREATE TABLE IF NOT EXISTS gamify_user (
       user_id     INTEGER PRIMARY KEY,
