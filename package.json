@@ -1,6 +1,6 @@
 {
   "name": "gamify",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Reading as a quest: XP and levels, streaks with freeze tokens, achievements, a weekly quest board built from your own library, and household leaderboards",
   "type": "module",
   "private": true,
